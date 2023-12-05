@@ -10,7 +10,7 @@ website:
         href: https://github.com/ejlorimor
 format:
   html:
-    theme: cosmo
+    theme: slate
     css: styles.css
 
 editor: visual

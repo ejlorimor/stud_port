@@ -1,12 +1,17 @@
 ---
-title: "Student Portfolio"
-listing:
-  contents: posts
-  sort: "date desc"
-  type: default
-  categories: true
-  sort-ui: false
-  filter-ui: false
-page-layout: full
-title-block-banner: true
+title: "Erik Lorimor"
+image: IMG_1506.jpeg
+about:
+  template: jolla
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com/ejlorimor
+    - icon: mailbox
+      text: Email
+      href: mailto:eriklorimor@my.unt.edu
 ---
+
+Ever since my youth I've been intrigued with building things, or taking them apart to see how they work. After many decades of discovery my next journey is once again in the field of academics. I am currently working on a Masters degree in Data Science, specializing in Artificial Intelligence. I have had a great career in software engineering and data analysis working at Sun Microsystems since 2000 and most recently at Oracle.
+
+I spend most of my time with my wife and our children. I also enjoy mountain biking or carving wood.

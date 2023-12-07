@@ -1,0 +1,52 @@
+---
+title: "Exploratory Data Analysis"
+author: "Erik Lorimor"
+date: "2023-12-07"
+categories: [code, analysis]
+---
+
+Using a variety of tools we'll dive in to understand the data we'll be working with using the widely available R language.
+
+First step is to load the libraries that will be used during EDA and load an internal data set for Road Casualties in Great Britain 1969-84
+
+```{r, echo=TRUE}
+
+library(corrplot)
+library(dplyr)
+library(tidyr)
+
+data("Seatbelts")
+uk_deaths <- data.frame(Seatbelts)
+```
+
+We'll start off by looking at the first few rows and looking at some other important EDA data points such as determining number of missing values and overall size of the data.
+
+```{r, echo=TRUE}
+
+head(uk_deaths)
+str(uk_deaths)
+sum(is.na(uk_deaths))
+dim(uk_deaths)
+```
+
+DriversKilled jumps out as a good target variable to study. Now that we have a decent idea of the data, we'll want to see where there is some natural correlation between the different variables. We'll use the corrplot library for this.
+
+```{r, echo=TRUE}
+
+uk_death_corr <- cor(uk_deaths)
+corrplot(uk_death_corr, method="color")
+
+```
+
+As DriversKilled is our target variable we are looking at strong values in the plot that are colored deep red or deep blue when we travel the same x or y axis as DriversKilled. From a visual reference of the plot it would seem the largest correlation is the variable drivers. We can use a scatter plot for viewing the relationship between DriversKilled and drivers.
+
+```{r, echo=TRUE}
+
+uk_death_corr
+
+plot(uk_deaths$drivers, uk_deaths$DriversKilled,
+     xlab = "Drivers",
+     ylab = "Deaths")
+```
+
+This shows a great linear correlation! We should be able to use models that work well with linear regression to further study this data. We can see between the two plots and the correlation table that drivers are most likely to be killed in accidents, we can further see there is another positive correlation with front passengers that could be valuable.

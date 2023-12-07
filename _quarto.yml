@@ -2,10 +2,14 @@ project:
   type: website
 
 website:
-  title: "Welcome to Erik Lorimor's Data Science Portfolio"
+  title: "Erik Lorimor"
   navbar:
-    right:
-      - about.qmd
+    left:
+      - text: "Home"
+        file: index.qmd
+      - blog.qmd
+      - text: "Resume"
+        file: Resume_ErikLorimor.pdf
       - icon: github
         href: https://github.com/ejlorimor
 format:
